@@ -80,7 +80,7 @@ def Showauthor(request):
 def Deleteauthor(request, author_pk):
     author = Author.objects.filter(AuthorID__exact = author_pk)[0]
     author.delete()
-    return HttpResponse('Delete author successful!')
+    return HttpResponseRedirect('/showauthor/')
 
 def Search(request):
 	errors = []
