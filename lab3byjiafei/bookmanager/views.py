@@ -73,6 +73,10 @@ def Addauthor(request):
 		af = Form_Author()
 		return render_to_response('addauthor.html', locals())
 
+def Showauthor(request):
+    authors = Author.objects.all()
+    return render_to_response('showauthor.html', locals())
+
 def Search(request):
 	errors = []
 	message = []

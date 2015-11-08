@@ -22,26 +22,8 @@
 	<p>
 		<a href="{% url 'bookmanager.views.Addauthor' %}" >添加新作者</a>
 	</p>
-	作者信息表
-	<table border=1 align="center">
-		<tr>
-			<th width="162">姓名</th>
-			<th width="112">ID</th>
-			<th width="112">年龄</th>
-			<th width="112">国别</th>
-		</tr>
-		{% for author in authors %}
-		<tr>
-			<td>{{author.Name}}</td>
-			<td>{{author.AuthorID}}</td>
-			{% if author.Age %}
-				<td>{{author.Age}}</td>
-			{% else %}
-				<td>不详</td>
-			{% endif %}
-			<td>{{author.Country}}</td>
-		</tr>
-		{% endfor %}
-	</table>
+	<p>
+	<a href="{% url 'bookmanager.views.Showauthor' %}">查看作者信息表>>>></a>
+	</p>
 {% endblock %}
 
