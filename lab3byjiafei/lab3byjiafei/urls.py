@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^updatebook/(?P<book_pk>\d+)/$', views.Updatebook, name = 'updatebook'),
     url(r'^addauthor/$', views.Addauthor, name = 'addauthor'),
     url(r'^showauthor/$', views.Showauthor, name = 'showauthor'),
+    url(r'^deleteauthor/(?P<author_pk>\d+)/$', views.Deleteauthor, name = 'deleteauthor'),
     url(r'^search/$', views.Search, name = 'search'),
     url(r'^detail/(?P<book_pk>\d+)/$', views.Detail, name = 'detail'),
     url(r'^delete/(?P<book_pk>\d+)/(?P<author_pk>\d+)/$', views.Delete, name = 'delete'),

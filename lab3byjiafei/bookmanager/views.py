@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render_to_response, HttpResponseRedirect
+from django.shortcuts import render_to_response, HttpResponseRedirect, HttpResponse
 from bookmanager.models import Book, Author
 from bookmanager.forms import Form_Book_new, Form_Book_update, Form_Author
 
@@ -76,6 +76,11 @@ def Addauthor(request):
 def Showauthor(request):
     authors = Author.objects.all()
     return render_to_response('showauthor.html', locals())
+
+def Deleteauthor(request, author_pk):
+    author = Author.objects.filter(AuthorID__exact = author_pk)[0]
+    author.delete()
+    return HttpResponse('Delete author successful!')
 
 def Search(request):
 	errors = []
