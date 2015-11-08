@@ -29,6 +29,7 @@
 			<th width="112">ID</th>
 			<th width="112">年龄</th>
 			<th width="112">国别</th>
+			<th width="112">操作</th>
 		</tr>
 		{% for author in authors %}
 		<tr>
@@ -40,6 +41,7 @@
 				<td>不详</td>
 			{% endif %}
 			<td>{{author.Country}}</td>
+			<td><a href="{% url 'bookmanager.views.Deleteauthor' author_pk=author.AuthorID %}">删除</a></td>
 		</tr>
 		{% endfor %}
 	</table>
